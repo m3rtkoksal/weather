@@ -35,8 +35,4 @@ class WeatherViewModel {
         self.placecode = model.placecode
 //        self.cityName = getCityName()
     }
-//
-//    private func getCityName() -> String {
-//
-//    }
 }

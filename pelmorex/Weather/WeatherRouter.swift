@@ -27,5 +27,4 @@ class WeatherRouter: NSObject, WeatherRoutingLogic {
         viewController?.navigationController?.pushViewController(questionVC, animated: true)
     }
     
-   
 }
