@@ -32,8 +32,9 @@ class WeatherTableViewCell: UITableViewCell {
         self.weatherImage.image = UIImage(named: imageText)
         self.currentDegree.text = String(model.temperature)
         self.frameView.layer.borderWidth = 2
-        self.frameView.layer.borderColor = UIColor.black.cgColor
-        self.frameView.backgroundColor = .systemGray3
+        self.frameView.layer.borderColor = UIColor.systemGray3.cgColor
+        self.frameView.backgroundColor = .systemGray5
+        self.frameView.layer.shadowColor = UIColor.black.cgColor
         self.frameView.layer.cornerRadius = 8
         self.degreeTypeLabel.text = "°" + model.temperature_unit
     }
