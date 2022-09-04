@@ -27,6 +27,18 @@
 		8EABD0D428C3A795008C0107 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0D328C3A795008C0107 /* UITableViewExt.swift */; };
 		8EABD0D628C3A811008C0107 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0D528C3A811008C0107 /* Reusable.swift */; };
 		8EABD0D828C3A83B008C0107 /* Nibloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0D728C3A83B008C0107 /* Nibloadable.swift */; };
+		8EABD0E228C40BE6008C0107 /* WeatherDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0E128C40BE6008C0107 /* WeatherDetailRouter.swift */; };
+		8EABD0E428C41019008C0107 /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0E328C41019008C0107 /* UILabelExt.swift */; };
+		8EABD0E828C4177A008C0107 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0E628C4177A008C0107 /* PhotoCollectionViewCell.swift */; };
+		8EABD0E928C4177A008C0107 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD0E728C4177A008C0107 /* PhotoCollectionViewCell.xib */; };
+		8EABD0EB28C417FF008C0107 /* PhotoImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0EA28C417FF008C0107 /* PhotoImageViewModel.swift */; };
+		8EABD0ED28C4184C008C0107 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0EC28C4184C008C0107 /* PhotoModel.swift */; };
+		8EABD0EF28C4205C008C0107 /* UICollectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0EE28C4205C008C0107 /* UICollectionExt.swift */; };
+		8EABD0F428C42894008C0107 /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0F328C42894008C0107 /* PhotoVC.swift */; };
+		8EABD0F628C42960008C0107 /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD0F528C42960008C0107 /* Photo.storyboard */; };
+		8EABD0F828C42C45008C0107 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD0F728C42C45008C0107 /* Question.storyboard */; };
+		8EABD0FD28C42C8E008C0107 /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0FC28C42C8E008C0107 /* QuestionVC.swift */; };
+		8EABD0FF28C42FFC008C0107 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0FE28C42FFC008C0107 /* StringExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +64,18 @@
 		8EABD0D328C3A795008C0107 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		8EABD0D528C3A811008C0107 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		8EABD0D728C3A83B008C0107 /* Nibloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nibloadable.swift; sourceTree = "<group>"; };
+		8EABD0E128C40BE6008C0107 /* WeatherDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailRouter.swift; sourceTree = "<group>"; };
+		8EABD0E328C41019008C0107 /* UILabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
+		8EABD0E628C4177A008C0107 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		8EABD0E728C4177A008C0107 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		8EABD0EA28C417FF008C0107 /* PhotoImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImageViewModel.swift; sourceTree = "<group>"; };
+		8EABD0EC28C4184C008C0107 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		8EABD0EE28C4205C008C0107 /* UICollectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionExt.swift; sourceTree = "<group>"; };
+		8EABD0F328C42894008C0107 /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
+		8EABD0F528C42960008C0107 /* Photo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
+		8EABD0F728C42C45008C0107 /* Question.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
+		8EABD0FC28C42C8E008C0107 /* QuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
+		8EABD0FE28C42FFC008C0107 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +108,8 @@
 		8EABD09F28C3819C008C0107 /* pelmorex */ = {
 			isa = PBXGroup;
 			children = (
+				8EABD0FB28C42C69008C0107 /* Question */,
+				8EABD0F228C4287B008C0107 /* PhotoShow */,
 				8EABD0CB28C39F2D008C0107 /* WeatherDetail */,
 				8EABD0CA28C39F0A008C0107 /* Weather */,
 				8EABD0C728C39E8B008C0107 /* Storyboards */,
@@ -106,6 +132,9 @@
 				8EABD0D328C3A795008C0107 /* UITableViewExt.swift */,
 				8EABD0D528C3A811008C0107 /* Reusable.swift */,
 				8EABD0D728C3A83B008C0107 /* Nibloadable.swift */,
+				8EABD0E328C41019008C0107 /* UILabelExt.swift */,
+				8EABD0EE28C4205C008C0107 /* UICollectionExt.swift */,
+				8EABD0FE28C42FFC008C0107 /* StringExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -132,6 +161,8 @@
 			children = (
 				8EABD0A628C3819C008C0107 /* Main.storyboard */,
 				8EABD0C828C39EA7008C0107 /* Detail.storyboard */,
+				8EABD0F528C42960008C0107 /* Photo.storyboard */,
+				8EABD0F728C42C45008C0107 /* Question.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -151,7 +182,11 @@
 		8EABD0CB28C39F2D008C0107 /* WeatherDetail */ = {
 			isa = PBXGroup;
 			children = (
+				8EABD0E528C4175F008C0107 /* Cell */,
 				8EABD0CC28C39F40008C0107 /* WeatherDetailVC.swift */,
+				8EABD0E128C40BE6008C0107 /* WeatherDetailRouter.swift */,
+				8EABD0EA28C417FF008C0107 /* PhotoImageViewModel.swift */,
+				8EABD0EC28C4184C008C0107 /* PhotoModel.swift */,
 			);
 			path = WeatherDetail;
 			sourceTree = "<group>";
@@ -163,6 +198,31 @@
 				8EABD0D028C3A26A008C0107 /* WeatherTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		8EABD0E528C4175F008C0107 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8EABD0E628C4177A008C0107 /* PhotoCollectionViewCell.swift */,
+				8EABD0E728C4177A008C0107 /* PhotoCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8EABD0F228C4287B008C0107 /* PhotoShow */ = {
+			isa = PBXGroup;
+			children = (
+				8EABD0F328C42894008C0107 /* PhotoVC.swift */,
+			);
+			path = PhotoShow;
+			sourceTree = "<group>";
+		};
+		8EABD0FB28C42C69008C0107 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				8EABD0FC28C42C8E008C0107 /* QuestionVC.swift */,
+			);
+			path = Question;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,9 +283,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EABD0F628C42960008C0107 /* Photo.storyboard in Resources */,
 				8EABD0AD28C3819D008C0107 /* LaunchScreen.storyboard in Resources */,
+				8EABD0F828C42C45008C0107 /* Question.storyboard in Resources */,
 				8EABD0AA28C3819D008C0107 /* Assets.xcassets in Resources */,
 				8EABD0D228C3A26A008C0107 /* WeatherTableViewCell.xib in Resources */,
+				8EABD0E928C4177A008C0107 /* PhotoCollectionViewCell.xib in Resources */,
 				8EABD0A828C3819C008C0107 /* Main.storyboard in Resources */,
 				8EABD0C928C39EA7008C0107 /* Detail.storyboard in Resources */,
 			);
@@ -239,19 +302,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EABD0D128C3A26A008C0107 /* WeatherTableViewCell.swift in Sources */,
+				8EABD0F428C42894008C0107 /* PhotoVC.swift in Sources */,
 				8EABD0C628C39E32008C0107 /* AppStoryboard.swift in Sources */,
+				8EABD0FD28C42C8E008C0107 /* QuestionVC.swift in Sources */,
 				8EABD0BB28C3962B008C0107 /* NetworkManager.swift in Sources */,
+				8EABD0EB28C417FF008C0107 /* PhotoImageViewModel.swift in Sources */,
 				8EABD0CD28C39F40008C0107 /* WeatherDetailVC.swift in Sources */,
 				8EABD0B928C390F7008C0107 /* WeatherVC.swift in Sources */,
+				8EABD0E828C4177A008C0107 /* PhotoCollectionViewCell.swift in Sources */,
 				8EABD0D428C3A795008C0107 /* UITableViewExt.swift in Sources */,
 				8EABD0D628C3A811008C0107 /* Reusable.swift in Sources */,
 				8EABD0D828C3A83B008C0107 /* Nibloadable.swift in Sources */,
+				8EABD0E228C40BE6008C0107 /* WeatherDetailRouter.swift in Sources */,
+				8EABD0E428C41019008C0107 /* UILabelExt.swift in Sources */,
 				8EABD0C228C39DAA008C0107 /* UIViewControllerExt.swift in Sources */,
 				8EABD0A128C3819C008C0107 /* AppDelegate.swift in Sources */,
 				8EABD0BD28C399B7008C0107 /* WeatherViewModel.swift in Sources */,
+				8EABD0EF28C4205C008C0107 /* UICollectionExt.swift in Sources */,
+				8EABD0FF28C42FFC008C0107 /* StringExt.swift in Sources */,
 				8EABD0A328C3819C008C0107 /* SceneDelegate.swift in Sources */,
 				8EABD0B528C383DE008C0107 /* Constants.swift in Sources */,
 				8EABD0B728C38998008C0107 /* WeatherModel.swift in Sources */,
+				8EABD0ED28C4184C008C0107 /* PhotoModel.swift in Sources */,
 				8EABD0BF28C39CED008C0107 /* WeatherRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

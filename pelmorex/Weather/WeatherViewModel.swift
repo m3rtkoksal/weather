@@ -20,6 +20,7 @@ class WeatherViewModel {
     private(set) var feels_like: String?
     private(set) var temperature_unit: String?
     private(set) var placecode: String?
+//    private(set) var cityName: String?
     
     init(model: WeatherModel) {
         self.lbl_updatetime = model.lbl_updatetime
@@ -28,9 +29,14 @@ class WeatherViewModel {
         self.wxcondition = model.wxcondition
         self.icon = model.icon
         self.inic = model.inic
-        self.temperature = model.temperature
-        self.feels_like = model.feels_like
+        self.temperature = String(model.temperature)
+        self.feels_like = String(model.feels_like)
         self.temperature_unit = model.temperature_unit
         self.placecode = model.placecode
+//        self.cityName = getCityName()
     }
+//
+//    private func getCityName() -> String {
+//
+//    }
 }

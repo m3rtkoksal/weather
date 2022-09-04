@@ -13,7 +13,7 @@ class NetworkManager {
     
     func getWeatherList(degreeType: DegreeTypes, completed: @escaping (WeatherModel) -> ()) {
         for city in CityCodes.allCities {
-            if let url = URL(string: "https://www.theweathernetwork.com/api/obsdata/\(city)/\(DegreeTypes.Celcius)") {
+            if let url = URL(string: "https://www.theweathernetwork.com/api/obsdata/\(city)/\(degreeType.rawValue)") {
                 let session = URLSession(configuration: .default)
                 var request = URLRequest(url: url)
                 request.httpMethod = "GET"

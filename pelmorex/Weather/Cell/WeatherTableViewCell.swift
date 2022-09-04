@@ -9,6 +9,8 @@ import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var frameView: UIView!
+    @IBOutlet weak var degreeTypeLabel: UILabel!
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var currentDegree: UILabel!
@@ -26,8 +28,14 @@ class WeatherTableViewCell: UITableViewCell {
     
     func setupCell(model: WeatherModel) {
         self.cityName.text = model.placecode
-//        let imageText = model.wxcondition
-//        self.weatherImage.image = UIImage(named: imageText)
+        let imageText = model.icon
+        self.weatherImage.image = UIImage(named: imageText)
+        self.currentDegree.text = String(model.temperature)
+        self.frameView.layer.borderWidth = 2
+        self.frameView.layer.borderColor = UIColor.black.cgColor
+        self.frameView.backgroundColor = .systemGray3
+        self.frameView.layer.cornerRadius = 8
+        self.degreeTypeLabel.text = model.temperature_unit
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
