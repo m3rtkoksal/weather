@@ -89,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E27B86028C51ED30063D201 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8EABD0BA28C3962B008C0107 /* NetworkManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		8EABD09428C3819C008C0107 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +116,7 @@
 		8EABD09F28C3819C008C0107 /* pelmorex */ = {
 			isa = PBXGroup;
 			children = (
+				8E27B86028C51ED30063D201 /* Service */,
 				8EABD0FB28C42C69008C0107 /* Question */,
 				8EABD0F228C4287B008C0107 /* PhotoShow */,
 				8EABD0CB28C39F2D008C0107 /* WeatherDetail */,
@@ -120,7 +129,6 @@
 				8EABD0A928C3819D008C0107 /* Assets.xcassets */,
 				8EABD0AB28C3819D008C0107 /* LaunchScreen.storyboard */,
 				8EABD0AE28C3819D008C0107 /* Info.plist */,
-				8EABD0BA28C3962B008C0107 /* NetworkManager.swift */,
 			);
 			path = pelmorex;
 			sourceTree = "<group>";
