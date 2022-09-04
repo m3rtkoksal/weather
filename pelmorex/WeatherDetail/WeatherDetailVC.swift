@@ -18,24 +18,14 @@ class WeatherDetailVC: UIViewController {
     var photos: [PhotoModel] = []
     var router: (NSObjectProtocol & WeatherDetailRoutingLogic)?
     
-    enum CellType {
-        case vanc
-        case calg
-        case ott
-        case tor
-        case mon
-    }
-    
-    var cellTypes: [[CellType]] = []
-    
-    @IBOutlet weak var weatherImage: UIImageView!
+    var sections = [[]]
+
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var lastUpdateLabel: UILabel!
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var feelsLikeLabel: UILabel!
-    @IBOutlet weak var tempUnitLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -85,12 +75,14 @@ class WeatherDetailVC: UIViewController {
     }
     
     func fillCellTypes() {
-        cellTypes = []
-        cellTypes.append(Array(repeating: CellType.vanc, count: self.vancPhotos.count))
-        cellTypes.append(Array(repeating: CellType.calg, count: self.calgPhotos.count))
-        cellTypes.append(Array(repeating: CellType.mon, count: self.monPhotos.count))
-        cellTypes.append(Array(repeating: CellType.ott, count: self.ottPhotos.count))
-        cellTypes.append(Array(repeating: CellType.tor, count: self.torPhotos.count))
+        sections.removeAll()
+        print("before",sections.count)
+        sections.append(vancPhotos)
+        sections.append(calgPhotos)
+        sections.append(monPhotos)
+        sections.append(ottPhotos)
+        sections.append(torPhotos)
+        print("after",sections.count)
     }
     
     func assignbackground(){
@@ -108,7 +100,6 @@ class WeatherDetailVC: UIViewController {
     
     func configCollectionView() {
         photoViewModel.getPhotos()
-        photos = photoViewModel.photos
         
         vancPhotos = photoViewModel.vancPhotos
         calgPhotos = photoViewModel.calgPhotos
@@ -137,52 +128,44 @@ class WeatherDetailVC: UIViewController {
 
 extension WeatherDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("numberOfItemsInSection",cellTypes[section].count)
-        return cellTypes[section].count
+        print("numberOfItemsInSection",sections[section].count)
+        return sections[section].count
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("numberOfSections",cellTypes.count)
-        return cellTypes.count
+        print("numberOfSections",sections.count)
+        return sections.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
-//        if selectedCity.placecode == "CAON0696" {
-//            cell.setup(torPhotos[indexPath.row])
-//
-//        } else if selectedCity.placecode == "CAON0423" {
-//            cell.setup(monPhotos[indexPath.row])
-//
-//        } else if selectedCity.placecode == "CAON0512"{
-//            cell.setup(ottPhotos[indexPath.row])
-//
-//        } else if selectedCity.placecode == "CABC0308"{
-//            cell.setup(vancPhotos[indexPath.row])
-//
-//        } else if selectedCity.placecode == "CAAB0049"{
-//            cell.setup(calgPhotos[indexPath.row])
-//
-//        }
-//        return cell
-        switch cellTypes[indexPath.section][indexPath.row] {
-        case .tor: cell.setup(torPhotos[indexPath.row])
-        case .vanc: cell.setup(vancPhotos[indexPath.row])
-        case .calg: cell.setup(calgPhotos[indexPath.row])
-        case .ott:  cell.setup(ottPhotos[indexPath.row])
-        case .mon:  cell.setup(monPhotos[indexPath.row])
+        if selectedCity.placecode == "CAON0696" {
+            cell.setup(torPhotos[indexPath.row])
+        } else if selectedCity.placecode == "CAON0423" {
+            cell.setup(monPhotos[indexPath.row])
+        } else if selectedCity.placecode == "CAON0512"{
+            cell.setup(ottPhotos[indexPath.row])
+        } else if selectedCity.placecode == "CABC0308"{
+            cell.setup(vancPhotos[indexPath.row])
+        } else if selectedCity.placecode == "CAAB0049"{
+            cell.setup(calgPhotos[indexPath.row])
         }
         return cell
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.allowsMultipleSelection = false
-        switch cellTypes[indexPath.section][indexPath.row] {
-        case .vanc: router?.showPhoto(photo: photoViewModel.vancPhotos[indexPath.row])
-        case .calg: router?.showPhoto(photo: photoViewModel.calgPhotos[indexPath.row])
-        case .ott: router?.showPhoto(photo: photoViewModel.ottPhotos[indexPath.row])
-        case .tor: router?.showPhoto(photo: photoViewModel.torPhotos[indexPath.row])
-        case .mon: router?.showPhoto(photo: photoViewModel.monPhotos[indexPath.row])
+        if selectedCity.placecode == "CAON0696" {
+            router?.showPhoto(photo: torPhotos[indexPath.row])
+        } else if selectedCity.placecode == "CAON0423" {
+            router?.showPhoto(photo: monPhotos[indexPath.row])
+        } else if selectedCity.placecode == "CAON0423" {
+            router?.showPhoto(photo: monPhotos[indexPath.row])
+        } else if selectedCity.placecode == "CAON0512" {
+            router?.showPhoto(photo: ottPhotos[indexPath.row] )
+        } else if selectedCity.placecode == "CABC0308" {
+            router?.showPhoto(photo: vancPhotos[indexPath.row])
+        } else if selectedCity.placecode == "CAAB0049" {
+            router?.showPhoto(photo: calgPhotos[indexPath.row])
         }
     }
 }

@@ -9,7 +9,6 @@ import UIKit
 
 final class PhotoImageViewModel {
     
-    var photos: [PhotoModel] = []
     var vancPhotos: [PhotoModel] = []
     var calgPhotos: [PhotoModel] = []
     var ottPhotos: [PhotoModel] = []
