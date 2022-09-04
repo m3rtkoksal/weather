@@ -16,6 +16,9 @@
             <PersistentString
                value = "calgPhotos">
             </PersistentString>
+            <PersistentString
+               value = "monPhotos">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState

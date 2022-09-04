@@ -40,7 +40,6 @@ class WeatherDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(selectedCity)
         self.setup()
         self.setupView()
         self.assignbackground()
@@ -116,18 +115,21 @@ class WeatherDetailVC: UIViewController {
         ottPhotos =  photoViewModel.ottPhotos
         torPhotos =  photoViewModel.torPhotos
         monPhotos =  photoViewModel.monPhotos
+
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.estimatedItemSize = CGSize(width: 94, height: 134)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
+        self.collectionView.collectionViewLayout = layout
         
         self.collectionView.collectionViewLayout = layout
         self.collectionView.backgroundColor = .clear
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.showsHorizontalScrollIndicator = false
+        self.automaticallyAdjustsScrollViewInsets = false
         self.collectionView.register(PhotoCollectionViewCell.self)
     }
 }
@@ -145,30 +147,31 @@ extension WeatherDetailVC: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
-        if selectedCity.placecode == "CAON0696" {
-            cell.setup(torPhotos[indexPath.row])
-            
-        } else if selectedCity.placecode == "CAON0423" {
-            cell.setup(monPhotos[indexPath.row])
-           
-        } else if selectedCity.placecode == "CAON0512"{
-            cell.setup(ottPhotos[indexPath.row])
-           
-        } else if selectedCity.placecode == "CABC0308"{
-            cell.setup(vancPhotos[indexPath.row])
-           
-        } else if selectedCity.placecode == "CAAB0049"{
-            cell.setup(calgPhotos[indexPath.row])
-          
+//        if selectedCity.placecode == "CAON0696" {
+//            cell.setup(torPhotos[indexPath.row])
+//
+//        } else if selectedCity.placecode == "CAON0423" {
+//            cell.setup(monPhotos[indexPath.row])
+//
+//        } else if selectedCity.placecode == "CAON0512"{
+//            cell.setup(ottPhotos[indexPath.row])
+//
+//        } else if selectedCity.placecode == "CABC0308"{
+//            cell.setup(vancPhotos[indexPath.row])
+//
+//        } else if selectedCity.placecode == "CAAB0049"{
+//            cell.setup(calgPhotos[indexPath.row])
+//
+//        }
+//        return cell
+        switch cellTypes[indexPath.section][indexPath.row] {
+        case .tor: cell.setup(torPhotos[indexPath.row])
+        case .vanc: cell.setup(vancPhotos[indexPath.row])
+        case .calg: cell.setup(calgPhotos[indexPath.row])
+        case .ott:  cell.setup(ottPhotos[indexPath.row])
+        case .mon:  cell.setup(monPhotos[indexPath.row])
         }
         return cell
-//        switch cellTypes[indexPath.section][indexPath.row] {
-//        case .tor: cell?.setup(torPhotos[indexPath.row])
-//        case .vanc: cell?.setup(vancPhotos[indexPath.row])
-//        case .calg: cell?.setup(calgPhotos[indexPath.row])
-//        case .ott:  cell?.setup(ottPhotos[indexPath.row])
-//        case .mon:  cell?.setup(monPhotos[indexPath.row])
-//        }
         
     }
     
