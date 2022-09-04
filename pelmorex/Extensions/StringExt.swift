@@ -28,7 +28,7 @@ extension String {
     
     
     var isValidName: Bool {
-        let RegEx = "^\\w{4,18}$"
+        let RegEx = "[A-Za-z]{4,}"
         let Test = NSPredicate(format:"SELF MATCHES %@", RegEx)
         return Test.evaluate(with: self)
     }

@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nvq-jC-dTH">
-                        <rect key="frame" x="5" y="5" width="310" height="183"/>
+                        <rect key="frame" x="12" y="5" width="296" height="183"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0d-rY-UTh">
                                 <rect key="frame" x="12" y="12" width="150" height="21"/>
@@ -37,13 +37,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvQ-4L-6ox">
-                                <rect key="frame" x="256" y="12" width="42" height="21"/>
+                                <rect key="frame" x="242" y="12" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pg7-Ng-DtS">
-                                <rect key="frame" x="209.5" y="12" width="41.5" height="21"/>
+                                <rect key="frame" x="195.5" y="12" width="41.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -63,10 +63,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Nvq-jC-dTH" secondAttribute="trailing" constant="5" id="D5Y-6u-UZ7"/>
+                    <constraint firstAttribute="trailing" secondItem="Nvq-jC-dTH" secondAttribute="trailing" constant="12" id="D5Y-6u-UZ7"/>
                     <constraint firstItem="Nvq-jC-dTH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="FzI-bz-XXr"/>
                     <constraint firstAttribute="bottom" secondItem="Nvq-jC-dTH" secondAttribute="bottom" constant="5" id="LJC-4M-5VH"/>
-                    <constraint firstItem="Nvq-jC-dTH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="XVy-CP-MN7"/>
+                    <constraint firstItem="Nvq-jC-dTH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="XVy-CP-MN7"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
