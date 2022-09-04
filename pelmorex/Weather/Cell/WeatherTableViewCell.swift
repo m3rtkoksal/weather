@@ -27,7 +27,7 @@ class WeatherTableViewCell: UITableViewCell {
     }
     
     func setupCell(model: WeatherModel) {
-        self.cityName.text = model.placecode
+        self.cityName.text = model.placecode.convertCodeToTitle(model: model)
         let imageText = model.icon
         self.weatherImage.image = UIImage(named: imageText)
         self.currentDegree.text = String(model.temperature)
@@ -35,7 +35,7 @@ class WeatherTableViewCell: UITableViewCell {
         self.frameView.layer.borderColor = UIColor.black.cgColor
         self.frameView.backgroundColor = .systemGray3
         self.frameView.layer.cornerRadius = 8
-        self.degreeTypeLabel.text = model.temperature_unit
+        self.degreeTypeLabel.text = "°" + model.temperature_unit
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

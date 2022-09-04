@@ -18,18 +18,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(_ photo: PhotoModel) {
-        switch photo.city {
-        case .Toronto:
-            self.imageView.image = photo.photo
-        case .Montreal:
-            self.imageView.image = photo.photo
-        case .Ottawa:
-            self.imageView.image = photo.photo
-        case .Vancouver:
-            self.imageView.image = photo.photo
-        case .Calgary:
-            self.imageView.image = photo.photo
-        }
+        self.imageView.image = photo.photo
     }
 
 }

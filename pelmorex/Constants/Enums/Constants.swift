@@ -22,6 +22,16 @@ enum CityCodes: String, CaseIterable {
     case Ottawa = "CAON0512"
     case Vancouver = "CABC0308"
     case Calgary = "CAAB0049"
+    
+    var title: String {
+        switch self {
+        case .Toronto: return "Toronto"
+        case .Montreal: return "Montreal"
+        case .Ottawa: return "Ottawa"
+        case .Vancouver: return "Vancouver"
+        case .Calgary: return "Calgary"
+        }
+    }
   
     static let allCities = CityCodes.allCases.map { $0.rawValue }
 }

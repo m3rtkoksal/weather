@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "WeatherDetailVC.fillCellTypes():WeatherDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "vancPhotos.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WeatherDetailVC.configCollectionView():WeatherDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "calgPhotos">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WeatherDetailVC.collectionView(_:cellForItemAt:):WeatherDetailVC.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
