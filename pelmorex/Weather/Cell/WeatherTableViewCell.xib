@@ -21,10 +21,9 @@
                         <rect key="frame" x="5" y="5" width="310" height="183"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0d-rY-UTh">
-                                <rect key="frame" x="12" y="12" width="100" height="21"/>
+                                <rect key="frame" x="12" y="12" width="150" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="V37-8C-aft"/>
-                                    <constraint firstAttribute="width" constant="100" id="dar-Vq-b0p"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="V37-8C-aft"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

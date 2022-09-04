@@ -27,16 +27,29 @@ class WeatherTableViewCell: UITableViewCell {
     }
     
     func setupCell(model: WeatherModel) {
-        self.cityName.text = model.placecode.convertCodeToTitle(model: model)
+        self.cityName.label(textStr: model.placecode.convertCodeToTitle(model: model),
+                            textColor: UIColor.darkGray,
+                            textFont: UIFont.systemFont(ofSize: 25, weight: .semibold),
+                            lineSpacing: -0.25,
+                            paragraphStyle: NSMutableParagraphStyle())
+        
         let imageText = model.icon
         self.weatherImage.image = UIImage(named: imageText)
-        self.currentDegree.text = String(model.temperature)
+        self.currentDegree.label(textStr: String(model.temperature),
+                            textColor: UIColor.darkGray,
+                            textFont: UIFont.systemFont(ofSize: 25, weight: .semibold),
+                            lineSpacing: -0.25,
+                            paragraphStyle: NSMutableParagraphStyle())
         self.frameView.layer.borderWidth = 2
         self.frameView.layer.borderColor = UIColor.systemGray3.cgColor
         self.frameView.backgroundColor = .systemGray5
         self.frameView.layer.shadowColor = UIColor.black.cgColor
         self.frameView.layer.cornerRadius = 8
-        self.degreeTypeLabel.text = "°" + model.temperature_unit
+        self.degreeTypeLabel.label(textStr: "°" + model.temperature_unit,
+                                   textColor: UIColor.darkGray,
+                                   textFont: UIFont.systemFont(ofSize: 25, weight: .semibold),
+                                   lineSpacing: -0.25,
+                                   paragraphStyle: NSMutableParagraphStyle())
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

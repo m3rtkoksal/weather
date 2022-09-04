@@ -35,16 +35,19 @@ class QuestionVC: UIViewController {
     func setup() {
         errorLabel.isHidden = true
         nameLabel.label(textStr: "Name",
-                        textColor: UIColor.black,
-                        textFont: UIFont.systemFont(ofSize: 12), lineSpacing: -0.12, paragraphStyle: NSMutableParagraphStyle())
+                        textColor: UIColor.darkGray,
+                        textFont: UIFont.systemFont(ofSize: 20, weight: .semibold),
+                        lineSpacing: -0.25, paragraphStyle: NSMutableParagraphStyle())
         
         emailLabel.label(textStr: "Email",
-                         textColor: UIColor.black,
-                         textFont: UIFont.systemFont(ofSize: 12), lineSpacing: -0.12, paragraphStyle: NSMutableParagraphStyle())
+                         textColor: UIColor.darkGray,
+                         textFont: UIFont.systemFont(ofSize: 20, weight: .semibold),
+                         lineSpacing: -0.25, paragraphStyle: NSMutableParagraphStyle())
         
         phoneLabel.label(textStr: "Phone number",
-                          textColor: UIColor.black,
-                          textFont: UIFont.systemFont(ofSize: 12), lineSpacing: -0.12, paragraphStyle: NSMutableParagraphStyle())
+                         textColor: UIColor.darkGray,
+                         textFont: UIFont.systemFont(ofSize: 20, weight: .semibold),
+                         lineSpacing: -0.25, paragraphStyle: NSMutableParagraphStyle())
     }
     
     @IBAction func checkError(_ sender: UIButton) {
