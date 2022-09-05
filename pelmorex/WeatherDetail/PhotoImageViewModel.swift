@@ -41,13 +41,5 @@ final class PhotoImageViewModel {
             PhotoModel(photo: UIImage(named: "Montreal02")!, city: .Montreal),
             PhotoModel(photo: UIImage(named: "Montreal03")!, city: .Montreal),
         ]
-        
-//        photos = [vancPhotos,calgPhotos,ottPhotos,torPhotos,monPhotos]
-//        photos.append(contentsOf: vancPhotos)
-//        photos.append(contentsOf: calgPhotos)
-//        photos.append(contentsOf: ottPhotos)
-//        photos.append(contentsOf: torPhotos)
-//        photos.append(contentsOf: monPhotos)
-        
     }
 }

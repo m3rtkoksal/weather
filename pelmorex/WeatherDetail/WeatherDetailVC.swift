@@ -86,13 +86,11 @@ class WeatherDetailVC: UIViewController {
     
     func fillCellTypes() {
         sections.removeAll()
-        print("before",sections.count)
         sections.append(vancPhotos)
         sections.append(calgPhotos)
         sections.append(monPhotos)
         sections.append(ottPhotos)
         sections.append(torPhotos)
-        print("after",sections.count)
     }
     
     func assignbackground(){
@@ -138,11 +136,9 @@ class WeatherDetailVC: UIViewController {
 
 extension WeatherDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("numberOfItemsInSection",sections[section].count)
         return sections[section].count
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("numberOfSections",sections.count)
         return sections.count
     }
     

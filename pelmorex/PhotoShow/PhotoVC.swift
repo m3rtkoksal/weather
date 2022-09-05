@@ -17,7 +17,7 @@ class PhotoVC: UIViewController {
         self.bigPhoto.image = selectedPhoto.photo
         self.cityLabel.label(textStr: selectedPhoto.city.title,
                              textColor: UIColor.orange,
-                             textFont: UIFont.systemFont(ofSize: 15),
+                             textFont: UIFont.systemFont(ofSize: 25),
                              lineSpacing: -0.15,
                              paragraphStyle: NSMutableParagraphStyle())
     }
