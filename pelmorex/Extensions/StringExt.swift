@@ -51,7 +51,7 @@ extension String {
         return  self == filtered
     }
     
-    func convertCodeToTitle(model: WeatherModel) -> String {
+    func convertCodeToTitle(model: WeatherViewModel) -> String {
         if model.placecode == "CAON0696" { return "Toronto" }
         else if model.placecode == "CAON0423" { return "Montreal"}
         else if model.placecode == "CAON0512" { return "Ottawa"}

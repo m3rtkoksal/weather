@@ -8,7 +8,7 @@
 import Foundation
 
 protocol WeatherRoutingLogic {
-    func showWeatherDetail(city: WeatherModel?)
+    func showWeatherDetail(city: WeatherViewModel?)
     func showQuestionVC()
 }
 
@@ -16,7 +16,7 @@ class WeatherRouter: NSObject, WeatherRoutingLogic {
     
     weak var viewController: WeatherVC?
     
-    func showWeatherDetail(city: WeatherModel?) {
+    func showWeatherDetail(city: WeatherViewModel?) {
         let weatherDetailVC = WeatherDetailVC.instantiateFrom(appStoryboard: .Detail)
         weatherDetailVC.selectedCity = city
         viewController?.navigationController?.pushViewController(weatherDetailVC, animated: true)

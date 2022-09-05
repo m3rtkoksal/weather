@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeatherViewModel {
+class WeatherViewModel: Decodable {
     
     var weatherModel: WeatherModel!
     private(set) var lbl_updatetime: String?
@@ -23,6 +23,7 @@ class WeatherViewModel {
 //    private(set) var cityName: String?
     
     init(model: WeatherModel) {
+        self.weatherModel = model
         self.lbl_updatetime = model.lbl_updatetime
         self.updatetime = model.updatetime
         self.updatetime_stamp_gmt = model.updatetime_stamp_gmt

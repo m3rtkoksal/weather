@@ -11,7 +11,7 @@ class NetworkManager {
     
     static let shared = NetworkManager()
     
-    func getWeatherList(degreeType: DegreeTypes, completed: @escaping (WeatherModel) -> ()) {
+    func getWeatherList(degreeType: DegreeTypes, completed: @escaping (WeatherViewModel) -> ()) {
         for city in CityCodes.allCities {
             if let url = URL(string: "https://www.theweathernetwork.com/api/obsdata/\(city)/\(degreeType.rawValue)") {
                 let session = URLSession(configuration: .default)
@@ -22,7 +22,7 @@ class NetworkManager {
                         let decoder = JSONDecoder()
                         if let safeData = data {
                             do {
-                                let result = try decoder.decode(WeatherModel.self, from: safeData)
+                                let result = try decoder.decode(WeatherViewModel.self, from: safeData)
                                 DispatchQueue.main.async {
                                     completed(result)
                                 }

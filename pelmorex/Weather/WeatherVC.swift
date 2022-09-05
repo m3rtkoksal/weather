@@ -10,7 +10,7 @@ import UIKit
 
 class WeatherVC: UIViewController {
     
-    var weathers = [WeatherModel]()
+    var weathers = [WeatherViewModel]()
     var selectedDegreeType = DegreeTypes(rawValue: "c")
     private var viewModel : WeatherViewModel?
     @IBOutlet weak var degreeTypeSegment: UISegmentedControl!
@@ -39,7 +39,6 @@ class WeatherVC: UIViewController {
         router.viewController = viewController
         NetworkManager.shared.getWeatherList(degreeType: .Celcius) { weather in
             DispatchQueue.main.async {
-                self.viewModel = WeatherViewModel(model: weather)
                 self.weathers.append(weather)
                 self.configureTable()
                 self.updateMainUI()

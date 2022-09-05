@@ -8,7 +8,7 @@
 import UIKit
 
 class WeatherDetailVC: UIViewController {
-    var selectedCity: WeatherModel!
+    var selectedCity: WeatherViewModel!
     var photoViewModel = PhotoImageViewModel()
     var vancPhotos: [PhotoModel] = []
     var calgPhotos: [PhotoModel] = []
@@ -55,26 +55,26 @@ class WeatherDetailVC: UIViewController {
     }
     
     func setupView() {
-        cityNameLabel.label(textStr: selectedCity.placecode.convertCodeToTitle(model: selectedCity),
+        cityNameLabel.label(textStr: selectedCity.placecode!.convertCodeToTitle(model: selectedCity),
                                  textColor: UIColor.black,
                                  textFont: UIFont.systemFont(ofSize: 30, weight: .bold),
                                 lineSpacing: -0.13,
                                 paragraphStyle: NSMutableParagraphStyle())
         
-        conditionLabel.label(textStr: selectedCity.wxcondition,
+        conditionLabel.label(textStr: selectedCity.wxcondition!,
                                      textColor: UIColor.black,
                                      textFont: UIFont.systemFont(ofSize: 25, weight: .semibold),
                                     lineSpacing: -0.13,
                                     paragraphStyle: NSMutableParagraphStyle())
         
-        temperatureLabel.label(textStr: String(selectedCity.temperature) + "°" + selectedCity.temperature_unit,
+        temperatureLabel.label(textStr: String(selectedCity.temperature!) + "°" + selectedCity.temperature_unit!,
                                          textColor: UIColor.black,
                                          textFont: UIFont.systemFont(ofSize: 20, weight: .semibold),
                                         lineSpacing: -0.13,
                                         paragraphStyle: NSMutableParagraphStyle())
         
         
-        feelsLikeLabel.label(textStr: String(selectedCity.feels_like) + "°" + selectedCity.temperature_unit,
+        feelsLikeLabel.label(textStr: String(selectedCity.feels_like!) + "°" + selectedCity.temperature_unit!,
                                                  textColor: UIColor.black,
                                                  textFont: UIFont.systemFont(ofSize: 20, weight: .semibold),
                                                 lineSpacing: -0.13,
@@ -97,7 +97,7 @@ class WeatherDetailVC: UIViewController {
     
     func assignbackground(){
             let imageText = selectedCity.icon
-            let background = UIImage(named: imageText)
+        let background = UIImage(named: imageText!)
             var imageView : UIImageView!
             imageView = UIImageView(frame: view.bounds)
         imageView.contentMode =  UIView.ContentMode.center
