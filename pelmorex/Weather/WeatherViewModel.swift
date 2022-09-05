@@ -21,7 +21,6 @@ class WeatherViewModel: Decodable {
     private(set) var temperature_unit: String?
     private(set) var placecode: String?
     
-    
     enum CodingKeys: String, CodingKey {
         case lbl_updatetime, updatetime, updatetime_stamp_gmt, wxcondition, icon, inic, temperature, feels_like, temperature_unit, placecode
     }
