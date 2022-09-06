@@ -12,7 +12,7 @@ typealias DownloadComplete = () -> ()
 enum DegreeTypes: String, CaseIterable {
     case Celcius = "c"
     case Fahrenheit = "f"
-   
+    
     static let allDegreeTypes = DegreeTypes.allCases.map { $0.rawValue }
 }
 
@@ -23,16 +23,20 @@ enum CityCodes: String, CaseIterable {
     case Vancouver = "CABC0308"
     case Calgary = "CAAB0049"
     
+    //    var title: String {
+    //        switch self {
+    //        case .Toronto: return "CAON0696"
+    //        case .Montreal: return "CAON0423"
+    //        case .Ottawa: return "CAON0512"
+    //        case .Vancouver: return "CABC0308"
+    //        case .Calgary: return "CAAB0049"
+    //        }
+    
+    //}
     var title: String {
-        switch self {
-        case .Toronto: return "Toronto"
-        case .Montreal: return "Montreal"
-        case .Ottawa: return "Ottawa"
-        case .Vancouver: return "Vancouver"
-        case .Calgary: return "Calgary"
-        }
+        return self.rawValue
     }
-  
+    
     static let allCities = CityCodes.allCases.map { $0.rawValue }
 }
 

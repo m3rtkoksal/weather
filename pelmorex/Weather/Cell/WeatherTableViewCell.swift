@@ -15,7 +15,6 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var currentDegree: UILabel!
     
-    
     public var nib = UINib(nibName: "WeatherTableViewCell", bundle: Bundle.main)
     
     override func awakeFromNib() {

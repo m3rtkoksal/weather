@@ -55,6 +55,7 @@ class WeatherDetailVC: UIViewController {
     }
     
     func setupView() {
+        print(selectedCity.placecode)
         cityNameLabel.label(textStr: selectedCity.placecode!.convertCodeToTitle(model: selectedCity),
                                  textColor: UIColor.black,
                                  textFont: UIFont.systemFont(ofSize: 30, weight: .bold),
@@ -144,15 +145,15 @@ extension WeatherDetailVC: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
-        if selectedCity.placecode == "CAON0696" {
+        if selectedCity.placecode == CityCodes.Toronto.title {
             cell.setup(torPhotos[indexPath.row])
-        } else if selectedCity.placecode == "CAON0423" {
+        } else if selectedCity.placecode == CityCodes.Montreal.title {
             cell.setup(monPhotos[indexPath.row])
-        } else if selectedCity.placecode == "CAON0512"{
+        } else if selectedCity.placecode == CityCodes.Ottawa.title {
             cell.setup(ottPhotos[indexPath.row])
-        } else if selectedCity.placecode == "CABC0308"{
+        } else if selectedCity.placecode == CityCodes.Vancouver.title {
             cell.setup(vancPhotos[indexPath.row])
-        } else if selectedCity.placecode == "CAAB0049"{
+            } else if selectedCity.placecode == CityCodes.Calgary.title {
             cell.setup(calgPhotos[indexPath.row])
         }
         return cell
@@ -160,17 +161,15 @@ extension WeatherDetailVC: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.allowsMultipleSelection = false
-        if selectedCity.placecode == "CAON0696" {
+        if selectedCity.placecode == CityCodes.Toronto.title {
             router?.showPhoto(photo: torPhotos[indexPath.row])
-        } else if selectedCity.placecode == "CAON0423" {
+        } else if selectedCity.placecode == CityCodes.Montreal.title {
             router?.showPhoto(photo: monPhotos[indexPath.row])
-        } else if selectedCity.placecode == "CAON0423" {
-            router?.showPhoto(photo: monPhotos[indexPath.row])
-        } else if selectedCity.placecode == "CAON0512" {
+        } else if selectedCity.placecode == CityCodes.Ottawa.title {
             router?.showPhoto(photo: ottPhotos[indexPath.row] )
-        } else if selectedCity.placecode == "CABC0308" {
+        } else if selectedCity.placecode == CityCodes.Vancouver.title {
             router?.showPhoto(photo: vancPhotos[indexPath.row])
-        } else if selectedCity.placecode == "CAAB0049" {
+        } else if selectedCity.placecode == CityCodes.Calgary.title {
             router?.showPhoto(photo: calgPhotos[indexPath.row])
         }
     }
