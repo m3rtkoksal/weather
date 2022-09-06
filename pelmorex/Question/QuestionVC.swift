@@ -12,19 +12,13 @@ class QuestionVC: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var mailErrorLabel: UILabel!
     @IBOutlet weak var phoneErrorLabel: UILabel!
-    
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTF: UITextField!
-    
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailTF: UITextField!
-    
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var phoneTF: UITextField!
-    
     @IBOutlet weak var sendButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

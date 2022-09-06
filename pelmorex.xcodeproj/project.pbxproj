@@ -39,7 +39,19 @@
 		8EABD0F828C42C45008C0107 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD0F728C42C45008C0107 /* Question.storyboard */; };
 		8EABD0FD28C42C8E008C0107 /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0FC28C42C8E008C0107 /* QuestionVC.swift */; };
 		8EABD0FF28C42FFC008C0107 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD0FE28C42FFC008C0107 /* StringExt.swift */; };
+		8EE7BB1B28C7D84100AC45B5 /* pelmorexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE7BB1A28C7D84100AC45B5 /* pelmorexUITests.swift */; };
+		8EE7BB1D28C7D84100AC45B5 /* pelmorexUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE7BB1C28C7D84100AC45B5 /* pelmorexUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8EE7BB1E28C7D84100AC45B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EABD09528C3819C008C0107 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EABD09C28C3819C008C0107;
+			remoteInfo = pelmorex;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8EABD09D28C3819C008C0107 /* pelmorex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pelmorex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,10 +88,20 @@
 		8EABD0F728C42C45008C0107 /* Question.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
 		8EABD0FC28C42C8E008C0107 /* QuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
 		8EABD0FE28C42FFC008C0107 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		8EE7BB1828C7D84100AC45B5 /* pelmorexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pelmorexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EE7BB1A28C7D84100AC45B5 /* pelmorexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pelmorexUITests.swift; sourceTree = "<group>"; };
+		8EE7BB1C28C7D84100AC45B5 /* pelmorexUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pelmorexUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8EABD09A28C3819C008C0107 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE7BB1528C7D84100AC45B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -101,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				8EABD09F28C3819C008C0107 /* pelmorex */,
+				8EE7BB1928C7D84100AC45B5 /* pelmorexUITests */,
 				8EABD09E28C3819C008C0107 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				8EABD09D28C3819C008C0107 /* pelmorex.app */,
+				8EE7BB1828C7D84100AC45B5 /* pelmorexUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,6 +257,15 @@
 			path = Question;
 			sourceTree = "<group>";
 		};
+		8EE7BB1928C7D84100AC45B5 /* pelmorexUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8EE7BB1A28C7D84100AC45B5 /* pelmorexUITests.swift */,
+				8EE7BB1C28C7D84100AC45B5 /* pelmorexUITestsLaunchTests.swift */,
+			);
+			path = pelmorexUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +286,24 @@
 			productReference = 8EABD09D28C3819C008C0107 /* pelmorex.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8EE7BB1728C7D84100AC45B5 /* pelmorexUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EE7BB2228C7D84100AC45B5 /* Build configuration list for PBXNativeTarget "pelmorexUITests" */;
+			buildPhases = (
+				8EE7BB1428C7D84100AC45B5 /* Sources */,
+				8EE7BB1528C7D84100AC45B5 /* Frameworks */,
+				8EE7BB1628C7D84100AC45B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EE7BB1F28C7D84100AC45B5 /* PBXTargetDependency */,
+			);
+			name = pelmorexUITests;
+			productName = pelmorexUITests;
+			productReference = 8EE7BB1828C7D84100AC45B5 /* pelmorexUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -265,6 +316,10 @@
 				TargetAttributes = {
 					8EABD09C28C3819C008C0107 = {
 						CreatedOnToolsVersion = 13.1;
+					};
+					8EE7BB1728C7D84100AC45B5 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 8EABD09C28C3819C008C0107;
 					};
 				};
 			};
@@ -282,6 +337,7 @@
 			projectRoot = "";
 			targets = (
 				8EABD09C28C3819C008C0107 /* pelmorex */,
+				8EE7BB1728C7D84100AC45B5 /* pelmorexUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -299,6 +355,13 @@
 				8EABD0E928C4177A008C0107 /* PhotoCollectionViewCell.xib in Resources */,
 				8EABD0A828C3819C008C0107 /* Main.storyboard in Resources */,
 				8EABD0C928C39EA7008C0107 /* Detail.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE7BB1628C7D84100AC45B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +399,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8EE7BB1428C7D84100AC45B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EE7BB1D28C7D84100AC45B5 /* pelmorexUITestsLaunchTests.swift in Sources */,
+				8EE7BB1B28C7D84100AC45B5 /* pelmorexUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EE7BB1F28C7D84100AC45B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EABD09C28C3819C008C0107 /* pelmorex */;
+			targetProxy = 8EE7BB1E28C7D84100AC45B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8EABD0A628C3819C008C0107 /* Main.storyboard */ = {
@@ -530,6 +610,50 @@
 			};
 			name = Release;
 		};
+		8EE7BB2028C7D84100AC45B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79G38KD48M;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mertkoksal.pelmorexUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = pelmorex;
+			};
+			name = Debug;
+		};
+		8EE7BB2128C7D84100AC45B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79G38KD48M;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mertkoksal.pelmorexUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = pelmorex;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -547,6 +671,15 @@
 			buildConfigurations = (
 				8EABD0B228C3819D008C0107 /* Debug */,
 				8EABD0B328C3819D008C0107 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EE7BB2228C7D84100AC45B5 /* Build configuration list for PBXNativeTarget "pelmorexUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EE7BB2028C7D84100AC45B5 /* Debug */,
+				8EE7BB2128C7D84100AC45B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
