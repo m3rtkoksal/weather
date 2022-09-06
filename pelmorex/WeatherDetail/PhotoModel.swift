@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct PhotoModel {
+struct PhotoModel: Equatable {
     let photo: UIImage
     let city: CityCodes
 }

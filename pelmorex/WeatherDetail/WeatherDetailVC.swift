@@ -16,6 +16,7 @@ class WeatherDetailVC: UIViewController {
     var torPhotos: [PhotoModel] = []
     var monPhotos: [PhotoModel] = []
     var photos: [PhotoModel] = []
+    var photoSection : [CityCodes: Int] = [:]
     var router: (NSObjectProtocol & WeatherDetailRoutingLogic)?
     
     var sections = [[]]
@@ -55,7 +56,6 @@ class WeatherDetailVC: UIViewController {
     }
     
     func setupView() {
-        print(selectedCity.placecode)
         cityNameLabel.label(textStr: selectedCity.placecode!.convertCodeToTitle(model: selectedCity),
                                  textColor: UIColor.black,
                                  textFont: UIFont.systemFont(ofSize: 30, weight: .bold),
@@ -87,11 +87,13 @@ class WeatherDetailVC: UIViewController {
     
     func fillCellTypes() {
         sections.removeAll()
-        sections.append(vancPhotos)
-        sections.append(calgPhotos)
-        sections.append(monPhotos)
-        sections.append(ottPhotos)
-        sections.append(torPhotos)
+        photos.map {
+            if let val: Int = photoSection[$0.city] {
+                photoSection[$0.city] = val + 1
+            } else {
+                photoSection[$0.city] = 1
+            }
+        }
     }
     
     func assignbackground(){
@@ -109,19 +111,14 @@ class WeatherDetailVC: UIViewController {
     
     func configCollectionView() {
         photoViewModel.getPhotos()
-        
-        vancPhotos = photoViewModel.vancPhotos
-        calgPhotos = photoViewModel.calgPhotos
-        ottPhotos =  photoViewModel.ottPhotos
-        torPhotos =  photoViewModel.torPhotos
-        monPhotos =  photoViewModel.monPhotos
+        photos = photoViewModel.photos
 
-        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.estimatedItemSize = CGSize(width: 94, height: 134)
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 0
+        layout.sectionInset = UIEdgeInsets(top: 0, left: UIScreen.main.bounds.width / 7, bottom: 0, right: 0)
         self.collectionView.collectionViewLayout = layout
         
         self.collectionView.collectionViewLayout = layout
@@ -129,7 +126,7 @@ class WeatherDetailVC: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.showsHorizontalScrollIndicator = false
-        self.automaticallyAdjustsScrollViewInsets = false
+        self.automaticallyAdjustsScrollViewInsets = true
         self.collectionView.register(PhotoCollectionViewCell.self)
     }
 }
@@ -137,40 +134,31 @@ class WeatherDetailVC: UIViewController {
 
 extension WeatherDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sections[section].count
+        print(photoSection.values.count)
+        return photos.count / photoSection.values.count
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return sections.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
-        if selectedCity.placecode == CityCodes.Toronto.title {
-            cell.setup(torPhotos[indexPath.row])
-        } else if selectedCity.placecode == CityCodes.Montreal.title {
-            cell.setup(monPhotos[indexPath.row])
-        } else if selectedCity.placecode == CityCodes.Ottawa.title {
-            cell.setup(ottPhotos[indexPath.row])
-        } else if selectedCity.placecode == CityCodes.Vancouver.title {
-            cell.setup(vancPhotos[indexPath.row])
-            } else if selectedCity.placecode == CityCodes.Calgary.title {
-            cell.setup(calgPhotos[indexPath.row])
+        let filteredPhotos = photos.filter({$0.city.rawValue == selectedCity.placecode!})
+        for photo in photos {
+            if photo.city.title == selectedCity.placecode {
+                cell.setup(filteredPhotos[indexPath.row])
+            }
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.allowsMultipleSelection = false
-        if selectedCity.placecode == CityCodes.Toronto.title {
-            router?.showPhoto(photo: torPhotos[indexPath.row])
-        } else if selectedCity.placecode == CityCodes.Montreal.title {
-            router?.showPhoto(photo: monPhotos[indexPath.row])
-        } else if selectedCity.placecode == CityCodes.Ottawa.title {
-            router?.showPhoto(photo: ottPhotos[indexPath.row] )
-        } else if selectedCity.placecode == CityCodes.Vancouver.title {
-            router?.showPhoto(photo: vancPhotos[indexPath.row])
-        } else if selectedCity.placecode == CityCodes.Calgary.title {
-            router?.showPhoto(photo: calgPhotos[indexPath.row])
+        let filteredPhotos = photos.filter({$0.city.rawValue == selectedCity.placecode!})
+        for photo in photos {
+            if photo.city.title == selectedCity.placecode {
+                router?.showPhoto(photo: filteredPhotos[indexPath.row])
+            }
         }
     }
 }

@@ -23,16 +23,6 @@ enum CityCodes: String, CaseIterable {
     case Vancouver = "CABC0308"
     case Calgary = "CAAB0049"
     
-    //    var title: String {
-    //        switch self {
-    //        case .Toronto: return "CAON0696"
-    //        case .Montreal: return "CAON0423"
-    //        case .Ottawa: return "CAON0512"
-    //        case .Vancouver: return "CABC0308"
-    //        case .Calgary: return "CAAB0049"
-    //        }
-    
-    //}
     var title: String {
         return self.rawValue
     }

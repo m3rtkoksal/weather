@@ -15,7 +15,9 @@ class PhotoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bigPhoto.image = selectedPhoto.photo
-        self.cityLabel.label(textStr: selectedPhoto.city.title,
+        let text = selectedPhoto.city
+        print(selectedPhoto.city)
+        self.cityLabel.label(textStr: "\(text)",
                              textColor: UIColor.orange,
                              textFont: UIFont.systemFont(ofSize: 25),
                              lineSpacing: -0.15,

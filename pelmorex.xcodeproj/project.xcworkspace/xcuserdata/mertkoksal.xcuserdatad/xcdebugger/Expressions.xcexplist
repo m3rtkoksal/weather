@@ -3,10 +3,22 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "WeatherDetailVC.collectionView(_:cellForItemAt:):WeatherDetailVC.swift">
+      </ContextState>
+      <ContextState
          contextName = "WeatherDetailVC.fillCellTypes():WeatherDetailVC.swift">
          <PersistentStrings>
             <PersistentString
+               value = "nextPhotoCity">
+            </PersistentString>
+            <PersistentString
                value = "vancPhotos.count">
+            </PersistentString>
+            <PersistentString
+               value = "numberOfItemsInSection">
+            </PersistentString>
+            <PersistentString
+               value = "currentPhotoCity">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -20,9 +32,6 @@
                value = "monPhotos">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "WeatherDetailVC.collectionView(_:cellForItemAt:):WeatherDetailVC.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
