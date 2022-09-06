@@ -14,7 +14,7 @@ class WeatherDetailVC: UIViewController {
     var photoSection : [CityCodes: Int] = [:]
     var router: (NSObjectProtocol & WeatherDetailRoutingLogic)?
     var filteredPhotos: [PhotoModel] = []
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var lastUpdateLabel: UILabel!
@@ -38,7 +38,7 @@ class WeatherDetailVC: UIViewController {
         self.setupView()
         self.assignbackground()
         self.configCollectionView()
-        self.fillCellTypes()
+        self.filterPhotos()
     }
     
     func setup() {
@@ -50,62 +50,55 @@ class WeatherDetailVC: UIViewController {
     
     func setupView() {
         cityNameLabel.label(textStr: selectedCity.placecode!.convertCodeToTitle(model: selectedCity),
-                                 textColor: UIColor.black,
-                                 textFont: UIFont.systemFont(ofSize: 30, weight: .bold),
-                                lineSpacing: -0.13,
-                                paragraphStyle: NSMutableParagraphStyle())
+                            textColor: UIColor.black,
+                            textFont: UIFont.systemFont(ofSize: 30, weight: .bold),
+                            lineSpacing: -0.13,
+                            paragraphStyle: NSMutableParagraphStyle())
         
         conditionLabel.label(textStr: selectedCity.wxcondition!,
-                                     textColor: UIColor.black,
-                                     textFont: UIFont.systemFont(ofSize: 25, weight: .semibold),
-                                    lineSpacing: -0.13,
-                                    paragraphStyle: NSMutableParagraphStyle())
+                             textColor: UIColor.black,
+                             textFont: UIFont.systemFont(ofSize: 25, weight: .semibold),
+                             lineSpacing: -0.13,
+                             paragraphStyle: NSMutableParagraphStyle())
         
         temperatureLabel.label(textStr: String(selectedCity.temperature!) + "°" + selectedCity.temperature_unit!,
-                                         textColor: UIColor.black,
-                                         textFont: UIFont.systemFont(ofSize: 20, weight: .semibold),
-                                        lineSpacing: -0.13,
-                                        paragraphStyle: NSMutableParagraphStyle())
+                               textColor: UIColor.black,
+                               textFont: UIFont.systemFont(ofSize: 20, weight: .semibold),
+                               lineSpacing: -0.13,
+                               paragraphStyle: NSMutableParagraphStyle())
         
         
         feelsLikeLabel.label(textStr: String(selectedCity.feels_like!) + "°" + selectedCity.temperature_unit!,
-                                                 textColor: UIColor.black,
-                                                 textFont: UIFont.systemFont(ofSize: 20, weight: .semibold),
-                                                lineSpacing: -0.13,
-                                                paragraphStyle: NSMutableParagraphStyle())
+                             textColor: UIColor.black,
+                             textFont: UIFont.systemFont(ofSize: 20, weight: .semibold),
+                             lineSpacing: -0.13,
+                             paragraphStyle: NSMutableParagraphStyle())
         
         
         lastUpdateLabel.text = selectedCity.updatetime
     }
     
-    func fillCellTypes() {
+    func filterPhotos() {
         filteredPhotos = photos.filter({$0.city.rawValue == selectedCity.placecode!})
-        photos.map {
-            if let val: Int = photoSection[$0.city] {
-                photoSection[$0.city] = val + 1
-            } else {
-                photoSection[$0.city] = 1
-            }
-        }
     }
     
     func assignbackground(){
-            let imageText = selectedCity.icon
+        let imageText = selectedCity.icon
         let background = UIImage(named: imageText!)
-            var imageView : UIImageView!
-            imageView = UIImageView(frame: view.bounds)
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
         imageView.contentMode =  UIView.ContentMode.center
-            imageView.clipsToBounds = true
-            imageView.image = background
-            imageView.center = view.center
-            view.addSubview(imageView)
-            self.view.sendSubviewToBack(imageView)
-        }
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+    }
     
     func configCollectionView() {
         photoViewModel.getPhotos()
         photos = photoViewModel.photos
-
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.estimatedItemSize = CGSize(width: 140, height: 140)
