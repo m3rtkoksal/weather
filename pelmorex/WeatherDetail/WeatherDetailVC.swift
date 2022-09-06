@@ -115,12 +115,10 @@ class WeatherDetailVC: UIViewController {
 
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = CGSize(width: 94, height: 134)
+        layout.estimatedItemSize = CGSize(width: 140, height: 140)
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 0, left: UIScreen.main.bounds.width / 7, bottom: 0, right: 0)
-        self.collectionView.collectionViewLayout = layout
-        
+        layout.sectionInset = UIEdgeInsets(top: 0, left: UIScreen.main.bounds.width / 10, bottom: 0, right: 0)
         self.collectionView.collectionViewLayout = layout
         self.collectionView.backgroundColor = .clear
         self.collectionView.delegate = self
