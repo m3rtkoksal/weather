@@ -117,7 +117,6 @@ class WeatherDetailVC: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.showsHorizontalScrollIndicator = false
-        self.automaticallyAdjustsScrollViewInsets = true
         self.collectionView.register(PhotoCollectionViewCell.self)
     }
 }
@@ -125,8 +124,7 @@ class WeatherDetailVC: UIViewController {
 
 extension WeatherDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(photoSection.values.count)
-        return photos.count / photoSection.values.count
+        return filteredPhotos.count
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

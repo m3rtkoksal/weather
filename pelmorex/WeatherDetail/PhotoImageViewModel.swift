@@ -19,15 +19,20 @@ final class PhotoImageViewModel {
             PhotoModel(photo: UIImage(named: "Calgary01")!, city: .Calgary),
             PhotoModel(photo: UIImage(named: "Calgary02")!, city: .Calgary),
             PhotoModel(photo: UIImage(named: "Calgary03")!, city: .Calgary),
+            PhotoModel(photo: UIImage(named: "Calgary01")!, city: .Calgary),
+            PhotoModel(photo: UIImage(named: "Calgary02")!, city: .Calgary),
+            PhotoModel(photo: UIImage(named: "Calgary03")!, city: .Calgary),
             PhotoModel(photo: UIImage(named: "Ottawa01")!, city: .Ottawa),
             PhotoModel(photo: UIImage(named: "Ottawa02")!, city: .Ottawa),
             PhotoModel(photo: UIImage(named: "Ottawa03")!, city: .Ottawa),
             PhotoModel(photo: UIImage(named: "Toronto01")!, city: .Toronto),
             PhotoModel(photo: UIImage(named: "Toronto02")!, city: .Toronto),
             PhotoModel(photo: UIImage(named: "Toronto03")!, city: .Toronto),
+            PhotoModel(photo: UIImage(named: "Toronto04")!, city: .Toronto),
+            PhotoModel(photo: UIImage(named: "Toronto05")!, city: .Toronto),
             PhotoModel(photo: UIImage(named: "Montreal01")!, city: .Montreal),
             PhotoModel(photo: UIImage(named: "Montreal02")!, city: .Montreal),
-            PhotoModel(photo: UIImage(named: "Montreal03")!, city: .Montreal),
+            PhotoModel(photo: UIImage(named: "Montreal03")!, city: .Montreal)
         ]
     }
 }
