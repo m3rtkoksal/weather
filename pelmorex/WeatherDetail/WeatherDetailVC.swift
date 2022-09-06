@@ -10,16 +10,10 @@ import UIKit
 class WeatherDetailVC: UIViewController {
     var selectedCity: WeatherViewModel!
     var photoViewModel = PhotoImageViewModel()
-    var vancPhotos: [PhotoModel] = []
-    var calgPhotos: [PhotoModel] = []
-    var ottPhotos: [PhotoModel] = []
-    var torPhotos: [PhotoModel] = []
-    var monPhotos: [PhotoModel] = []
     var photos: [PhotoModel] = []
     var photoSection : [CityCodes: Int] = [:]
     var router: (NSObjectProtocol & WeatherDetailRoutingLogic)?
-    
-    var sections = [[]]
+    var filteredPhotos: [PhotoModel] = []
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cityNameLabel: UILabel!
@@ -37,7 +31,6 @@ class WeatherDetailVC: UIViewController {
         super.viewDidDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated);
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +79,7 @@ class WeatherDetailVC: UIViewController {
     }
     
     func fillCellTypes() {
-        sections.removeAll()
+        filteredPhotos = photos.filter({$0.city.rawValue == selectedCity.placecode!})
         photos.map {
             if let val: Int = photoSection[$0.city] {
                 photoSection[$0.city] = val + 1
@@ -141,7 +134,6 @@ extension WeatherDetailVC: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
-        let filteredPhotos = photos.filter({$0.city.rawValue == selectedCity.placecode!})
         for photo in photos {
             if photo.city.title == selectedCity.placecode {
                 cell.setup(filteredPhotos[indexPath.row])
@@ -152,7 +144,6 @@ extension WeatherDetailVC: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.allowsMultipleSelection = false
-        let filteredPhotos = photos.filter({$0.city.rawValue == selectedCity.placecode!})
         for photo in photos {
             if photo.city.title == selectedCity.placecode {
                 router?.showPhoto(photo: filteredPhotos[indexPath.row])
