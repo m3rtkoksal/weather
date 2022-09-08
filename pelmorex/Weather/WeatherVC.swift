@@ -37,7 +37,11 @@ class WeatherVC: UIViewController {
         let router = WeatherRouter()
         viewController.router = router
         router.viewController = viewController
-        NetworkManager.shared.getWeatherList(degreeType: .Celcius) { weather in
+        self.manager(degreeType: .Celcius)
+    }
+    
+    func manager(degreeType: DegreeTypes) {
+        NetworkManager.shared.getWeatherList(degreeType: degreeType) { weather in
             DispatchQueue.main.async {
                 self.weathers.append(weather)
                 self.configureTable()
@@ -57,14 +61,8 @@ class WeatherVC: UIViewController {
         } else {
             selectedDegreeType = DegreeTypes.Fahrenheit
         }
-        NetworkManager.shared.getWeatherList(degreeType: selectedDegreeType!) { weather in
-            DispatchQueue.main.async {
-                self.weathers.append(weather)
-                self.updateMainUI()
-                self.configureTable()
-            }
+        manager(degreeType: selectedDegreeType!)
         }
-    }
     
     func configureTable() {
         tableView.register(WeatherTableViewCell.self)
