@@ -51,6 +51,7 @@ class QuestionVC: UIViewController {
         self.checkPhone()
         if isCorrect {
             sendButton.backgroundColor = UIColor.blue
+            showAlert()
         }
     }
     private func checkEmail() {
@@ -99,6 +100,16 @@ class QuestionVC: UIViewController {
             phoneErrorLabel.isHidden = true
             isCorrect = true
         }
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: "Success", message: "Your question is sent.", preferredStyle: UIAlertController.Style.alert)
+
+              // add an action (button)
+              alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+              // show the alert
+              self.present(alert, animated: true, completion: nil)
     }
 
 }
