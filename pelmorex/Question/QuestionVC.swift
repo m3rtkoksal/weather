@@ -19,6 +19,7 @@ class QuestionVC: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var sendButton: UIButton!
+    var isCorrect: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +49,14 @@ class QuestionVC: UIViewController {
         self.checkEmail()
         self.checkName()
         self.checkPhone()
+        if isCorrect {
+            sendButton.backgroundColor = UIColor.blue
+        }
     }
     private func checkEmail() {
         if !emailTF.text!.isValidEmail() {
             mailErrorLabel.isHidden = false
+            isCorrect = false
             mailErrorLabel.label(textStr: "email is not correct",
                              textColor: UIColor.red,
                              textFont: UIFont.systemFont(ofSize: 12),
@@ -60,13 +65,14 @@ class QuestionVC: UIViewController {
             sendButton.backgroundColor = UIColor.red
         } else {
             mailErrorLabel.isHidden = true
-            sendButton.backgroundColor = UIColor.blue
+            isCorrect = true
         }
     }
     
     private func checkName() {
         if !(nameTF.text?.isValidName ?? false) {
             errorLabel.isHidden = false
+            isCorrect = false
             errorLabel.label(textStr: "name is not correct",
                             textColor: UIColor.red,
                             textFont: UIFont.systemFont(ofSize: 12),
@@ -75,13 +81,14 @@ class QuestionVC: UIViewController {
             sendButton.backgroundColor = UIColor.red
         } else {
             errorLabel.isHidden = true
-            sendButton.backgroundColor = UIColor.blue
+            isCorrect = true
         }
     }
     
     private func checkPhone() {
         if !phoneTF.text!.isPhone(){
             phoneErrorLabel.isHidden = false
+            isCorrect = false
             phoneErrorLabel.label(textStr: "phone is not correct",
                             textColor: UIColor.red,
                             textFont: UIFont.systemFont(ofSize: 12),
@@ -90,7 +97,7 @@ class QuestionVC: UIViewController {
             sendButton.backgroundColor = UIColor.red
         } else {
             phoneErrorLabel.isHidden = true
-            sendButton.backgroundColor = UIColor.blue
+            isCorrect = true
         }
     }
 
