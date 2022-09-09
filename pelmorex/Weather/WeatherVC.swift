@@ -17,6 +17,19 @@ class WeatherVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var router: (NSObjectProtocol & WeatherRoutingLogic)?
     
+    fileprivate lazy var activityIndicatorView: UIActivityIndicatorView = {
+        let activityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        activityIndicatorView.hidesWhenStopped = true
+        // Set Center
+        var center = self.view.center
+        if let navigationBarFrame = self.navigationController?.navigationBar.frame {
+            center.y -= (navigationBarFrame.origin.y + navigationBarFrame.size.height)
+        }
+        activityIndicatorView.center = center
+        self.view.addSubview(activityIndicatorView)
+        return activityIndicatorView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -33,6 +46,7 @@ class WeatherVC: UIViewController {
     }
     
     func setup() {
+        activityIndicatorView.startAnimating()
         let viewController = self
         let router = WeatherRouter()
         viewController.router = router
@@ -46,6 +60,7 @@ class WeatherVC: UIViewController {
                 self.weathers.append(weather)
                 self.configureTable()
                 self.updateMainUI()
+                self.activityIndicatorView.stopAnimating()
             }
         }
     }
