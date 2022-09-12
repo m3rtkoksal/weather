@@ -42,7 +42,7 @@ class WeatherViewModel: Decodable {
     func getCityName() -> String {
         guard let placecode = placecode else { return ""}
         return CityCodes(rawValue: placecode)!.title
-        }
+    }
     
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
