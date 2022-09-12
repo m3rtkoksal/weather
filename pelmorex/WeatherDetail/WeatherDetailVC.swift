@@ -129,20 +129,12 @@ extension WeatherDetailVC: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
-        for photo in photos {
-            if photo.city.title == selectedCity.placecode {
-                cell.setup(filteredPhotos[indexPath.row])
-            }
-        }
+        cell.setup(filteredPhotos[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.allowsMultipleSelection = false
-        for photo in photos {
-            if photo.city.title == selectedCity.placecode {
-                router?.showPhoto(photo: filteredPhotos[indexPath.row])
-            }
-        }
+        router?.showPhoto(photo: filteredPhotos[indexPath.row])
     }
 }
