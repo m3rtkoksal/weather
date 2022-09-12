@@ -50,12 +50,4 @@ extension String {
         let filtered = inputString.joined(separator: "")
         return  self == filtered
     }
-    
-    func convertCodeToTitle(model: WeatherViewModel) -> String {
-        if model.placecode == "CAON0696" { return "Toronto" }
-        else if model.placecode == "CAON0423" { return "Montreal"}
-        else if model.placecode == "CAON0512" { return "Ottawa"}
-        else if model.placecode == "CABC0308" { return "Vancouver"}
-        else { return "Calgary"}
-    }
 }

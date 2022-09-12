@@ -26,7 +26,7 @@ class WeatherTableViewCell: UITableViewCell {
     }
     
     func setupCell(model: WeatherViewModel) {
-        self.cityName.label(textStr: model.placecode!.convertCodeToTitle(model: model),
+        self.cityName.label(textStr: model.getCityName(),
                             textColor: UIColor.darkGray,
                             textFont: UIFont.systemFont(ofSize: 25, weight: .semibold),
                             lineSpacing: -0.25,

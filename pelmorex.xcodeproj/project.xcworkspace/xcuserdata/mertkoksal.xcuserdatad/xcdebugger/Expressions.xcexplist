@@ -3,24 +3,35 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "WeatherDetailVC.collectionView(_:cellForItemAt:):WeatherDetailVC.swift">
-      </ContextState>
-      <ContextState
          contextName = "WeatherDetailVC.fillCellTypes():WeatherDetailVC.swift">
          <PersistentStrings>
             <PersistentString
                value = "nextPhotoCity">
             </PersistentString>
             <PersistentString
-               value = "vancPhotos.count">
+               value = "numberOfItemsInSection">
             </PersistentString>
             <PersistentString
-               value = "numberOfItemsInSection">
+               value = "vancPhotos.count">
             </PersistentString>
             <PersistentString
                value = "currentPhotoCity">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WeatherViewModel.getCityName():WeatherViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "CityCodes(rawValue: placecode)!.title">
+            </PersistentString>
+            <PersistentString
+               value = "CityCodes(rawValue: placecode)!.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WeatherTableViewCell.setupCell(model:):WeatherTableViewCell.swift">
       </ContextState>
       <ContextState
          contextName = "WeatherDetailVC.configCollectionView():WeatherDetailVC.swift">
@@ -30,6 +41,17 @@
             </PersistentString>
             <PersistentString
                value = "monPhotos">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WeatherDetailVC.collectionView(_:cellForItemAt:):WeatherDetailVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CityCodes.title.getter:Constants.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.rawValue">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

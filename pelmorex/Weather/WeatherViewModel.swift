@@ -24,7 +24,6 @@ class WeatherViewModel: Decodable {
     enum CodingKeys: String, CodingKey {
         case lbl_updatetime, updatetime, updatetime_stamp_gmt, wxcondition, icon, inic, temperature, feels_like, temperature_unit, placecode
     }
-    //    private(set) var cityName: String?
     
     init(model: WeatherModel) {
         self.weatherModel = model
@@ -38,8 +37,12 @@ class WeatherViewModel: Decodable {
         self.feels_like = Int(model.feels_like)
         self.temperature_unit = model.temperature_unit
         self.placecode = model.placecode
-        //        self.cityName = getCityName()
     }
+    
+    func getCityName() -> String {
+        guard let placecode = placecode else { return ""}
+        return CityCodes(rawValue: placecode)!.title
+        }
     
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -51,6 +54,7 @@ class WeatherViewModel: Decodable {
         inic = try values.decode(String.self, forKey: .inic)
         temperature_unit = try values.decode(String.self, forKey: .temperature_unit)
         placecode = try values.decode(String.self, forKey: .placecode)
+//        city = try values.decode(String.self, forKey: .city)
         // decode temperature, when it comes as a String
         if let theString = try? values.decode(String.self, forKey: .temperature),
            let temp = Int(theString) {

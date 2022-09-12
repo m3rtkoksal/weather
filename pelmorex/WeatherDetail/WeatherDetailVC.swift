@@ -49,7 +49,7 @@ class WeatherDetailVC: UIViewController {
     }
     
     func setupView() {
-        cityNameLabel.label(textStr: selectedCity.placecode!.convertCodeToTitle(model: selectedCity),
+        cityNameLabel.label(textStr: selectedCity.getCityName(),
                             textColor: UIColor.black,
                             textFont: UIFont.systemFont(ofSize: 30, weight: .bold),
                             lineSpacing: -0.13,

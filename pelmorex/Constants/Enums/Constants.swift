@@ -24,7 +24,7 @@ enum CityCodes: String, CaseIterable {
     case Calgary = "CAAB0049"
     
     var title: String {
-        return self.rawValue
+        return "\(self)" 
     }
     
     static let allCities = CityCodes.allCases.map { $0.rawValue }
