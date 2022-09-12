@@ -75,7 +75,11 @@ class WeatherDetailVC: UIViewController {
                              paragraphStyle: NSMutableParagraphStyle())
         
         
-        lastUpdateLabel.text = selectedCity.updatetime
+        lastUpdateLabel.label(textStr: selectedCity.updatetime!,
+                              textColor: UIColor.systemGray2,
+                              textFont: UIFont.systemFont(ofSize: 12, weight: .light),
+                              lineSpacing: -0.12,
+                              paragraphStyle: NSMutableParagraphStyle())
     }
     
     func filterPhotos() {

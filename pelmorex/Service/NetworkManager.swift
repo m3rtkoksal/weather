@@ -37,8 +37,4 @@ class NetworkManager {
         }
         
     }
-    
-    func downloadCityWeatherDetails(city: CityCodes, degree: DegreeTypes ,completed: @escaping DownloadComplete) {
-        
-    }
 }
