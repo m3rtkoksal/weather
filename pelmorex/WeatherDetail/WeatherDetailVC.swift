@@ -123,6 +123,7 @@ extension WeatherDetailVC: UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filteredPhotos.count
     }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

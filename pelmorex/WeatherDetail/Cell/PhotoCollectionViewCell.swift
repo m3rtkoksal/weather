@@ -18,6 +18,9 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(_ photo: PhotoModel) {
+        self.imageView.layer.borderWidth = 2
+        self.imageView.layer.borderColor = UIColor.systemGray3.cgColor
+        self.imageView.layer.shadowRadius = 20
         self.imageView.image = photo.photo
     }
 

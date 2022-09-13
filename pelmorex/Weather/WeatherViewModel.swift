@@ -40,7 +40,7 @@ class WeatherViewModel: Decodable {
     }
     
     func getCityName() -> String {
-        guard let placecode = placecode else { return ""}
+        guard let placecode = placecode else { return "" }
         return CityCodes(rawValue: placecode)!.title
     }
     
@@ -54,7 +54,7 @@ class WeatherViewModel: Decodable {
         inic = try values.decode(String.self, forKey: .inic)
         temperature_unit = try values.decode(String.self, forKey: .temperature_unit)
         placecode = try values.decode(String.self, forKey: .placecode)
-//        city = try values.decode(String.self, forKey: .city)
+
         // decode temperature, when it comes as a String
         if let theString = try? values.decode(String.self, forKey: .temperature),
            let temp = Int(theString) {
